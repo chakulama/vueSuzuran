@@ -1,18 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Home v-bind:tasks="tasks" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/Home.vue'
 
 export default {
   name: 'app',
+  data(){
+    return{
+         tasks: [
+          { Title: "Kitchen", name: 'Binod', done: true },
+          { Title: "Salon", name: 'Yenji', done: false },
+          { Title: "BathRoom", name: 'Santi', done: false },
+          { Title: "Basura", name: 'Sangey', done: false },
+          { Title: "Doorway", name: 'Unis', done: false },
+        ]
+    }
+},
   components: {
-    HelloWorld
+    Home
   }
+ 
 }
 </script>
 
